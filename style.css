@@ -1,0 +1,436 @@
+/* Reset & Variable Styling Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-dark: #0b0f19;
+    --card-bg: #131b2e;
+    --gold-accent: #d4af37;
+    --gold-hover: #f39c12;
+    --text-light: #f8f9fa;
+    --text-muted: #94a3b8;
+    --border-color: rgba(212, 175, 55, 0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Header & Navbar Luxury Glassmorphism */
+header {
+    background: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--gold-accent);
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--gold-accent);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--gold-accent);
+    border-radius: 3px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 140px 20px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.95));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--gold-accent);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    display: inline-block;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--gold-accent);
+    color: #0b0f19;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+}
+
+/* Katalog Section */
+.catalog-section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.search-container {
+    max-width: 450px;
+    margin: 0 auto 40px auto;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 14px 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.search-container input:focus {
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--gold-accent);
+    margin: 40px 0;
+}
+
+.error-msg {
+    text-align: center;
+    color: #e74c3c;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+/* Grid Layout & Kartu Mobil */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.car-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-accent);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.15);
+}
+
+.car-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #1a2238;
+    transition: transform 0.5s ease;
+}
+
+.car-card:hover .car-img {
+    transform: scale(1.05);
+}
+
+.car-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.car-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.car-price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--gold-accent);
+    margin-bottom: 12px;
+}
+
+.car-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.btn-detail {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    color: var(--gold-accent);
+    border: 1px solid var(--gold-accent);
+    padding: 10px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-detail:hover {
+    background: var(--gold-accent);
+    color: #0b0f19;
+}
+
+/* Footer, Kontak & Instagram */
+footer {
+    background: #070910;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 60px 0 20px 0;
+    margin-top: 60px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-info h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-info h3 span {
+    color: var(--gold-accent);
+}
+
+.footer-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+}
+
+.contact-list a {
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contact-list a:hover {
+    color: var(--gold-hover);
+    text-decoration: underline;
+}
+
+.footer-form h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    border-color: var(--gold-accent);
+}
+
+.btn-submit {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Media Queries Responsif */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0b0f19;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        padding: 20px;
+    }
+
+    .navbar nav.active {
+        display: block;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .hero-content h2 {
+        font-size: 2.1rem;
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARS Showroom - Luxury & Performance Cars</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Penghubung ke file CSS External -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header>
+        <div class="container navbar">
+            <h1 class="logo">ARS <span>Showroom</span></h1>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#katalog">Koleksi Mobil</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-badge">Exclusive Automotive Collection</span>
+            <h2>Wujudkan Impian Berkendara Kelas Atas</h2>
+            <p>Koleksi kendaraan eksklusif dengan performa tertinggi, kenyamanan mutlak, dan prestise tanpa kompromi.</p>
+            <a href="#katalog" class="btn-primary">Jelajahi Koleksi</a>
+        </div>
+    </section>
+
+    <!-- Katalog Mobil Section (Integrasi API & DOM Manipulation) -->
+    <section id="katalog" class="container catalog-section">
+        <div class="section-header">
+            <h2 class="section-title">Katalog Mobil Eksklusif</h2>
+            <p class="section-subtitle">Data diambil secara realtime melalui sistem server API resmi.</p>
+        </div>
+        
+        <!-- Search Bar Realtime -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Cari merk atau model kendaraan...">
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading">Memuat koleksi kendaraan terbaik dari server...</div>
+        
+        <!-- Error Message Container -->
+        <div id="error-message" class="error-msg hidden"></div>
+
+        <!-- Container Tempat Kartu Mobil Ditampilkan secara Dinamis -->
+        <div id="car-container" class="car-grid"></div>
+    </section>
+
+    <!-- Section Kontak & Media Sosial (Instagram) -->
+    <footer id="kontak">
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <!-- Info Showroom & Kontak -->
+                <div class="footer-info">
+                    <h3>ARS <span>Showroom</span></h3>
+                    <p>Pusat kendaraan mewah dan berkualitas tinggi pilihan utama Anda.</p>
+                    <ul class="contact-list">
+                        <li>📍 Jl. Pemuda No. 123, Semarang, Indonesia</li>
+                        <li>📞 WhatsApp: <a href="https://wa.me/6281229223937">Chat WhatsApp</a></li>
+                        <li>✉️ adistasatria54@gmail.com</li>
+                        <li>📸 Instagram: <a href="https://www.instagram.com/adsramaa/#" target="_blank" rel="noopener">@adsramaa</a></li>
+                        <li>🕒 Jam Operasional: Senin - Sabtu (09.00 - 18.00 WIB)</li>
+                    </ul>
+                </div>
+
+                <!-- Form Hubungi Sales (Interaktif) -->
+                <div class="footer-form">
+                    <h4>Hubungi Sales / Test Drive</h4>
+                    <form id="contact-form">
+                        <input id="nama" type="text" placeholder="Nama Lengkap" required class="form-input">
+                        <input id="telp" type="tel" placeholder="Nomor Telepon / WhatsApp" required class="form-input">
+                        <textarea id="question" placeholder="Pertanyaan atau unit mobil yang ingin ditanyakan..." rows="3" required class="form-input"></textarea>
+                        <button type="submit" class="btn-primary btn-submit">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ARS Showroom. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Penghubung ke file JavaScript External -->
+    <script src="script.js"></script>
+</body>
+</html>
